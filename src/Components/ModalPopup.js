@@ -121,7 +121,7 @@ export default class ModalPopup extends Component {
                     <option value={1}>Cao</option>
                   </select>
                 </div>
-                <label htmlFor>Người thực hiện:</label>
+                <label >Người thực hiện:</label>
                 <br />
                 <CheckboxGroup
                   name="memberIdArr"
@@ -147,7 +147,7 @@ export default class ModalPopup extends Component {
                 </CheckboxGroup>
                 <br />
                 <br />
-                <label htmlFor>Nhãn:</label>
+                <label >Nhãn:</label>
                 <br />
                 <CheckboxGroup
                   name="labelArr"

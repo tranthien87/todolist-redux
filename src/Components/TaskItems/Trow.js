@@ -6,15 +6,17 @@ export default class Trow extends Component {
     this.state = {
       //changeProgress: ''
       //value : this.props.task.status
-      value: ''
+      //value: ''
+      selected: ''
     }
-    this.handleChange = this.handleChange.bind(this);
+    //this.handleChange = this.handleChange.bind(this);
   }
-  handleChange(event) {
+  onChange =(event)=> {
     this.setState({
-     value: event.target.value
+     [event.target.name]: event.target.value,
+      
     }, () => {
-      this.props.changeProgress(this.state.value, this.props.task.id);
+      this.props.changeProgress(this.state.selected, this.props.task.id);
     })
    
   }
@@ -116,8 +118,8 @@ export default class Trow extends Component {
           >
             Sửa
           </button>
-          <select value= {task.status} className="form-control" onChange={this.handleChange} >
-          <option value="tatca">Chọn progress</option>
+          <select name="selected"  value = {task.status} className="form-control" onChange={this.onChange} >
+            <option value="tatca">Chọn progress</option>
             <option value="chuahoanthanh">Chưa tiến hành</option>
             <option value="danghoanthanh">Đang tiến hành</option>
             <option value="hoanthanh">Hoàn thành</option>

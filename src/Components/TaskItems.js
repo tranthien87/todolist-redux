@@ -2,9 +2,12 @@ import React, { Component } from "react";
 import Thead from "./TaskItems/Thead";
 import Trow from "./TaskItems/Trow";
 import Search from './TaskItems/Search';
-export default class TaskItems extends Component {
+import {connect} from 'react-redux';
+
+ class TaskItems extends Component {
   render() {
-    let { tasks, filterType, filterProgress, filterSearch, sortType } = this.props;
+    
+    let { tasks, filterType, filterProgress, filterSearch, sortType} = this.props;
     let filterTask = [];
     switch (filterType) {
       case "filterProgress":
@@ -58,7 +61,7 @@ export default class TaskItems extends Component {
     }
 
    // console.log(filterTask);
-    let elemTaskItem = filterTask.map((task, index) => {
+    let elemTaskItem = tasks.map((task, index) => {
       return (
         <Trow
           task={task}
@@ -98,3 +101,9 @@ export default class TaskItems extends Component {
     );
   }
 }
+const mapStateToProps =(state) => {
+return {
+  tasks: state.tasks
+}
+}
+export default connect(mapStateToProps, null)(TaskItems);

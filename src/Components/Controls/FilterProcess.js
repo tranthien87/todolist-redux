@@ -18,7 +18,7 @@ export default class FilterProcess extends Component {
             Chưa tiến hành
           </li>
           <li className="py-1 display-5 lead" onClick = {this.handleFilterProgress.bind(this, 'danghoanthanh')}>
-          <i class="fa fa-spinner mr-2" ></i>
+          <i className="fa fa-spinner mr-2" ></i>
             Đang tiến hành
           </li>
           <li className="py-1 display-5 lead" onClick = {this.handleFilterProgress.bind(this, 'hoanthanh')}>
